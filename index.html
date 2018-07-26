@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html5 marquee canvas</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="box">
+			<div class="face face1"><span>Nhà Hàng Panorama</span></div>
+			<div class="face face2"><span>Nhà Hàng Panorama</span></div>
+		</div> -->
+		<div class="qk">
+			<marquee style="font-size: 60px; margin-top: 33px; font-family: 'Black Ops One', cursive;">
+				<script type="text/javascript">
+				farbbibliothek = new Array();
+				farbbibliothek[0] = new Array("#FF0000","#FF1100","#FF2200","#FF3300","#FF4400","#FF5500","#FF6600","#FF7700","#FF8800","#FF9900","#FFaa00","#FFbb00","#FFcc00","#FFdd00","#FFee00","#FFff00","#FFee00","#FFdd00","#FFcc00","#FFbb00","#FFaa00","#FF9900","#FF8800","#FF7700","#FF6600","#FF5500","#FF4400","#FF3300","#FF2200","#FF1100");
+				farbbibliothek[1] = new Array("#00FF00","#000000","#00FF00","#00FF00");
+				farbbibliothek[2] = new Array("#00FF00","#FF0000","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00");
+				farbbibliothek[3] = new Array("#FF0000","#FF4000","#FF8000","#FFC000","#FFFF00","#C0FF00","#80FF00","#40FF00","#00FF00","#00FF40","#00FF80","#00FFC0","#00FFFF","#00C0FF","#0080FF","#0040FF","#0000FF","#4000FF","#8000FF","#C000FF","#FF00FF","#FF00C0","#FF0080","#FF0040");
+				farbbibliothek[4] = new Array("#FF0000","#EE0000","#DD0000","#CC0000","#BB0000","#AA0000","#990000","#880000","#770000","#660000","#550000","#440000","#330000","#220000","#110000","#000000","#110000","#220000","#330000","#440000","#550000","#660000","#770000","#880000","#990000","#AA0000","#BB0000","#CC0000","#DD0000","#EE0000");
+				farbbibliothek[5] = new Array("#000000","#000000","#000000","#FFFFFF","#FFFFFF","#FFFFFF");
+				farbbibliothek[6] = new Array("#0000FF","#FFFF00");
+				farben = farbbibliothek[4];
+				function farbschrift()
+				{
+				for(var i=0 ; i<Buchstabe.length; i++)
+				{
+				document.all["a"+i].style.color=farben[i];
+				}
+				farbverlauf();
+				}
+				function string2array(text)
+				{
+				Buchstabe = new Array();
+				while(farben.length<text.length)
+				{
+				farben = farben.concat(farben);
+				}
+				k=0;
+				while(k<=text.length)
+				{
+				Buchstabe[k] = text.charAt(k);
+				k++;
+				}
+				}
+				function divserzeugen()
+				{
+				for(var i=0 ; i<Buchstabe.length; i++)
+				{
+				document.write("<span id='a"+i+"' class='a"+i+"'>"+Buchstabe[i] + "<\/span>");
+				}
+				farbschrift();
+				}
+				var a=1;
+				function farbverlauf()
+				{
+				for(var i=0 ; i<farben.length; i++)
+				{
+				farben[i-1]=farben[i];
+				}
+				farben[farben.length-1]=farben[-1];
+
+				setTimeout("farbschrift()",100);
+				}
+				//
+				var farbsatz=1;
+				function farbtauscher()
+				{
+				farben = farbbibliothek[farbsatz];
+				while(farben.length<text.length)
+				{
+				farben = farben.concat(farben);
+				}
+				farbsatz=Math.floor(Math.random()*(farbbibliothek.length-0.000001));
+				}
+				setInterval("farbtauscher()",500);
+
+				text= "CHAO MUNG KI NIEM QUOC KHANH 2-9-2018"; //h
+
+				string2array(text);
+				divserzeugen();
+				//document.write(text);
+				</script>
+			</marquee>
+		</div>
+
+		<div class="ttp">
+			<marquee direction="up" behavior="alternate" style="height:150px;">
+				<h1>
+					<span style='color:#FF0000;'>TRẠM</span>
+					<span style='color:#FF5000;'>THU</span>
+					<span style='color:#FFF100;'>PHÍ</span>
+					<span style='color:#BBFF00;'>BẮC</span> 
+					<span style='color:#6BFF00;'>HẢI</span>
+					<span style='color:#00FF35;'>VÂN</span>
+				</h1>
+			</marquee>
+		</div>
+		<div class="time">
+			<div id="time"></div>
+			<script type="text/javascript">
+				function dongho(){
+					var time = new Date();
+					var gio = time.getHours();
+					var phut = time.getMinutes();
+					var giay = time.getSeconds();
+					if(gio < 10)
+						gio = "0" + gio;
+					if(phut < 10)
+						phut = "0" + phut;
+					if(giay < 10)
+						giay = "0" + giay;
+					document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay;
+					setTimeout("dongho()", 1000); 
+				}
+				dongho();
+			</script>
+		</div>
+		<div id="top">
+			<div class="md">
+				<canvas id="field"></canvas>
+				<!-- <script src="canvas.js"></script> -->
+				<script type="text/javascript">
+					var canvas = document.getElementById('field');
+					// canvas.width = 100%;
+					// canvas.height = 500;
+
+					var ctx = canvas.getContext('2d');
+					var imgTree = new Image();
+					imgTree.src = 'tree.png';
+
+					// var x = 100, y = 100;
+					// function drawCircle(){
+					//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+					//   ctx.fillStyle = '#ffffff';
+					//   ctx.beginPath();
+					//   ctx.arc(x, y, 50, 0, Math.PI * 2, false);
+					//   ctx.fill();
+					//   ctx.closePath();
+					//   x += 10, y+=10;
+					// }
+
+					function Snow(){
+					  this.x = Math.round(Math.random() * canvas.width); 
+					  this.y = Math.round(Math.random() * canvas.height); 
+					  this.r = Math.round(Math.random()) * 0.5 + 1; 
+					  // Gió thổi
+					  this.a = Math.random() * 5;
+					}
+
+					Snow.prototype.update = function(){
+					  ctx.beginPath();
+					  ctx.fillStyle = '#ffffff';
+					  ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+					  ctx.fill();
+					  ctx.closePath();
+
+					  // Gió thổi
+					  this.x += Math.sin(this.a);
+					  this.a += 0.01;
+					  if(this.x > canvas.width || this.x < 0){
+					    this.x = Math.round(Math.random() * canvas.width);
+					    this.y = 0;
+					  }
+
+					   this.y += 2;
+					   if(this.y > canvas.height){
+					    this.y = 0;
+					   }
+					}
+					var totalSnows = 100;
+					var snows = [];
+					function drawSnows(){
+					  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+					  for(var i = 0; i < totalSnows; i++){
+					    snows[i].update();
+					  }
+					  
+					}
+
+					function drawTextures(){
+					  ctx.drawImage(imgTree, 180, 45, 30, 30);
+					}
+
+					function merryXmas(){
+					  ctx.clearRect(0, 0, canvas.width, canvas.height);
+					  drawTextures();
+					  drawSnows();
+					}
+
+					window.onload = function(){
+					  for(var i = 0; i < totalSnows; i++){
+					    snows.push(new Snow());
+					  }
+					  setInterval(merryXmas, 50);
+					  // setInterval(drawCircle, 50);
+					} 
+				</script>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
